@@ -1,0 +1,38 @@
+# Environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Datasets & Weights
+Dataset/
+best_model.pth
+*.pth
+*.pt
+model.safetensors
+config.json
+
+# Outputs
+checkpoints/
+results/
+runs/
+reports/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# OS files
+.DS_Store
+*.docx
+*.doc
+~$*
+*.zip
+upload_model.py
+Pure_Colab_Pipeline.ipynb
+Technical_Report.md
+

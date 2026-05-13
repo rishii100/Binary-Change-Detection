@@ -1,0 +1,60 @@
+seed: 42
+
+# ── Data ──────────────────────────────────────────────────────────────────────
+dataset:
+  root: "Dataset"
+  image_size: [256, 256]          # (H, W) all images resized to this
+
+# ── Model ─────────────────────────────────────────────────────────────────────
+model:
+  backbone: "resnet34"
+  pretrained: true                # use ImageNet pretrained weights for EO encoder
+
+# ── Loss ──────────────────────────────────────────────────────────────────────
+loss:
+  type: "bce_dice"
+  bce_pos_weight: 58.4            # imbalance ratio computed from train split
+  alpha: 0.5                      # weight on BCE term
+  beta: 0.5                       # weight on Dice term
+  smooth: 1.0
+
+# ── Training ──────────────────────────────────────────────────────────────────
+training:
+  epochs: 30
+  batch_size: 16
+  num_workers: 2
+  pin_memory: true
+  gradient_clip_norm: 1.0
+  early_stopping_patience: 10     # stop if val IoU doesn't improve for N epochs
+
+# ── Optimizer ─────────────────────────────────────────────────────────────────
+optimizer:
+  type: "adamw"
+  lr: 1.0e-4
+  weight_decay: 1.0e-4
+
+# ── Scheduler ─────────────────────────────────────────────────────────────────
+scheduler:
+  type: "cosine_annealing"
+  T_max: 30                       # = epochs
+
+# ── Augmentations ─────────────────────────────────────────────────────────────
+augmentations:
+  - horizontal_flip
+  - vertical_flip
+  - random_rotate_90
+  - shift_scale_rotate
+  - brightness_contrast
+  - gaussian_noise
+  - coarse_dropout
+
+# ── Evaluation ────────────────────────────────────────────────────────────────
+eval:
+  threshold: 0.5                  # sigmoid threshold for binary prediction
+  n_vis_samples: 10               # qualitative visualisation samples
+
+# ── Output ────────────────────────────────────────────────────────────────────
+output:
+  checkpoint_dir: "checkpoints"
+  results_dir: "results"
+  log_dir: "runs"                 # TensorBoard log directory
