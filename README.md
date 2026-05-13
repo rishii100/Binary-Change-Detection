@@ -78,7 +78,7 @@ Results will be saved inside the `results/` folder, including JSON metrics, conf
 
 | Split      | IoU     | Precision | Recall  | F1 Score |
 |------------|---------|-----------|---------|----------|
-| Validation | ~27.73% | ~35.79%   | ~55.18% | ~43.42%  |
+| Validation | 24.74%  | 26.45%    | 79.29%  | 39.67%   |
 | Test       | 3.50%   | 4.19%     | 17.37%  | 6.75%    |
 
 ## Citation / References
