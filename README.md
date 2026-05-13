@@ -56,6 +56,8 @@ Galaxyeyeai/
 *Note: The script automatically handles the mandatory label remapping (`0/1` -> `0`, `2/3` -> `1`).*
 
 ## Training
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/7354c57f-3de3-4269-b7ae-854214503d35" />
+
 To train the model from scratch, execute:
 ```bash
 python train.py --config config.yaml
