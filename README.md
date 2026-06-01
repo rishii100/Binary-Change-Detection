@@ -72,11 +72,11 @@ python eval.py --data_path Dataset/test --weights checkpoints/best.pth
 Results will be saved inside the `results/` folder, including JSON metrics, confusion matrices, and qualitative image comparisons.
 
 ## Model Weights
-*(Insert public link to your model weights here. e.g., Google Drive or Hugging Face Hub link)*
+
 - Link: [Hugging Face Repository](https://huggingface.co/rishii100/binary-change-detection)
 
 ## Results
-*These metrics are placeholders, assuming the model has finished training on local hardware.*
+
 
 | Split      | IoU     | Precision | Recall  | F1 Score |
 |------------|---------|-----------|---------|----------|
